@@ -7,7 +7,9 @@ import Assignment from '@material-ui/icons/Assignment';
 import moment from 'moment';
 import { NodeEdit, NodeList, NodeShow } from './nodes';
 import { SensorList, SensorShow } from './sensors';
-import { SmartContractCreate, SmartContractEdit, SmartContractList, SmartContractShow } from './smart-contracts';
+import { DPContractEdit, DPContractList, DPContractShow } from './dp-contracts';
+import { PaymentContractList } from './payment-contracts';
+import { ManagerContractList } from './manager-contracts';
 import { Dashboard } from './dashboard';
 import authProvider from './authProvider';
 import { apiURL } from './const';
@@ -109,12 +111,23 @@ const App = () => (
           icon={Unarchive}
       />
       <Resource
-          name="smart-contracts"
-          list={SmartContractList}
-          show={SmartContractShow}
-          create={SmartContractCreate}
-          edit={SmartContractEdit}
-          options={{ label: 'Contracts' }}
+          name="manager-contracts"
+          list={ManagerContractList}
+          options={{ label: 'Manager Contracts' }}
+          icon={Assignment}
+      />
+      <Resource
+          name="dp-contracts"
+          list={DPContractList}
+          show={DPContractShow}
+          edit={DPContractEdit}
+          options={{ label: 'DP Contracts' }}
+          icon={Assignment}
+      />
+      <Resource
+          name="payment-contracts"
+          list={PaymentContractList}
+          options={{ label: 'Payment Contracts' }}
           icon={Assignment}
       />
     </Admin>

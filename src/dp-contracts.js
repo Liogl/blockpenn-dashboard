@@ -7,9 +7,7 @@ import {
   SimpleShowLayout,
   Filter,
   TextField,
-  DateField,
   BooleanField,
-  Create,
   SimpleForm,
   TextInput,
   required,
@@ -24,45 +22,32 @@ const PostFilter = (props) => (
   </Filter>
 );
 
-const postRowStyle = (record, index) => ({
-  display: record.Ctime[record.Ctime.length - 1] === ' ' ? 'none' : ''
-});
-
-export const SmartContractList = (props) => (
+export const DPContractList = (props) => (
   <List {...props} filters={<PostFilter />}>
-    <Datagrid rowClick="show" rowStyle={postRowStyle}>
+    <Datagrid rowClick="show">
       <TextField source="id" label="Address" />
+      <TextField source="PaymentContract" label="BLPToken" />
       <BooleanField source="Enabled" />
-      <DateField source="Ctime" label="Created At" showTime />
-      <DateField source="Mtime" label="Update At" showTime />
     </Datagrid>
   </List>
 );
 
-export const SmartContractShow = (props) => (
+export const DPContractShow = (props) => (
   <Show {...props}>
     <SimpleShowLayout>
       <TextField source="id" label="Address" />
+        <TextField source="PaymentContract" label="PaymentContract" />
       <BooleanField source="Enabled" />
-      <DateField source="Ctime" showTime />
-      <DateField source="Mtime" showTime />
     </SimpleShowLayout>
   </Show>
 );
 
-export const SmartContractCreate = (props) => (
-  <Create {...props}>
-    <SimpleForm>
-      <TextInput source="Address" label="Contract ETH address" validate={[required()]} fullWidth />
-      <BooleanInput label="Enabled" source="Enabled" />
-    </SimpleForm>
-  </Create>
-);
 
-export const SmartContractEdit = (props) => (
+export const DPContractEdit = (props) => (
   <Edit {...props}>
     <SimpleForm>
       <TextInput disabled source="Address" label="Contract ETH address" validate={[required()]} fullWidth />
+      <TextField disabled source="PaymentContract" label="PaymentContract" />
       <BooleanInput label="Enabled" source="Enabled" />
     </SimpleForm>
   </Edit>
