@@ -13,6 +13,7 @@ import { ManagerContractList } from './manager-contracts';
 import { Dashboard } from './dashboard';
 import authProvider from './authProvider';
 import { apiURL } from './const';
+import customRoutes from './routes';
 
 moment.defaultFormat = 'YYYY-MM-DDTHH:mm:ss[Z]';
 
@@ -100,6 +101,7 @@ const App = () => (
         dashboard={Dashboard}
         title="BlockPenn - Dashboard"
         authProvider={authProvider}
+        customRoutes={customRoutes}
     >
       <Resource name="nodes" list={NodeList} show={NodeShow} edit={NodeEdit} options={{ label: 'Nodes' }} icon={Person} />
       <Resource name="sensors" list={SensorList} show={SensorShow} options={{ label: 'All sensors' }} icon={Unarchive} />
