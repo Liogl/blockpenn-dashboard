@@ -1,6 +1,6 @@
 {
   "name": "front",
-  "version": "0.36.11",
+  "version": "0.39.00",
   "private": true,
   "dependencies": {
     "@material-ui/icons": "^4.11.2",
